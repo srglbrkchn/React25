@@ -1,12 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 
 function App() {
-  return (
-    <div className="container">
-      <h1>TIME</h1>
-      <button>Get Time</button>
-    </div>
-  );
+
+    let [time, setTime] = useState(new Date().toLocaleTimeString());
+
+    function getTime() {
+      setTime(new Date().toLocaleTimeString());
+    }
+
+    console.log(time);
+    return (
+        <div className="container">
+            <h1>{time}</h1>
+            <button onClick={getTime}>Get Time</button>
+        </div>
+    );
 }
 
 export default App;
