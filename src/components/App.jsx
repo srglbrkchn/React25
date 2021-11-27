@@ -8,7 +8,8 @@ function App() {
       setTime(new Date().toLocaleTimeString());
     }
 
-    console.log(time);
+    setInterval(getTime, 1000);
+
     return (
         <div className="container">
             <h1>{time}</h1>
